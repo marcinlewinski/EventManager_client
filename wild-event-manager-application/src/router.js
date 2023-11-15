@@ -5,16 +5,23 @@ import EventsPage from "./pages/eventspage/EventsPage.jsx"
 import EventPage from "./pages/eventpage/EventPage.jsx"
 import LocationPage from "./pages/locationpage/LocationPage.jsx"
 import { createBrowserRouter } from "react-router-dom"
+import { MapProvider } from "./services/providers/MapProvider.jsx"
 
 const router = createBrowserRouter([
 	{
 		path: "/",
-		element: <Layout />,
+		element: (
+			<Layout />
+		),
 		errorElement: <ErrorPage />,
 		children: [
 			{
 				path: "/",
-				element: <MapPage />,
+				element: (
+					<MapProvider value={{ map: {} }}>
+						<MapPage />
+					</MapProvider>
+				),
 				errorElement: <ErrorPage />,
 			},
 			{
