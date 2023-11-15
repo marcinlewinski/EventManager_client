@@ -11,16 +11,17 @@ const router = createBrowserRouter([
 	{
 		path: "/",
 		element: (
-			<Layout />
+			<MapProvider value={{ map: [] }}>
+				<Layout />
+			</MapProvider>
+
 		),
 		errorElement: <ErrorPage />,
 		children: [
 			{
 				path: "/",
 				element: (
-					<MapProvider value={{ map: {} }}>
-						<MapPage />
-					</MapProvider>
+					<MapPage />
 				),
 				errorElement: <ErrorPage />,
 			},

@@ -4,21 +4,20 @@ import mapboxgl from 'mapbox-gl';
 import Marker from "./Marker"
 import './Map.scss';
 import { useNavigate } from 'react-router-dom';
-import { useMap } from "../../services/providers/MapProvider";
 
-const Map = () => {
+const Map = ({contextMap}) => {
 
-  const { map: contextMap } = useMap();
 
-  const [mapData, setMapData] = useState({});
+  const [mapData, setMapData] = useState(contextMap);
   const mapContainerRef = useRef(null);
   mapboxgl.accessToken = `${process.env.REACT_APP_API_KEY}`;
   const navigate = useNavigate();
 
 
   useEffect(() => {
-    if (Object.keys(mapData).length < 1 && Object.keys(contextMap).length > 0) {
+    if (Object.keys(mapData).length < 1) {
       setMapData(contextMap);
+      console.log("w")
     }
   }, [contextMap]);
 
