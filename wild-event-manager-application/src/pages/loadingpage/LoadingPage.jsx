@@ -1,12 +1,5 @@
-import React from 'react';
+import "./Loading.scss";
 
+const Loading = () => <div className="Loading" />;
 
-const LoadingPage = () => {
-    return (
-        <div>
-            Loading...
-        </div>
-    )
-}
-
-export default LoadingPage;
+export default Loading;
