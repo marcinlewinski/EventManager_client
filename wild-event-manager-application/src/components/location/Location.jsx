@@ -3,6 +3,7 @@ import EventTitle from "../event/EventTitle"
 import "./Location.scss"
 
 const Location = ({ location }) => {
+	console.log(location)
 	return (
 		<>
 			<div className='location-text'>

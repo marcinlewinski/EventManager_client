@@ -5,7 +5,7 @@ import Marker from "./Marker"
 import './Map.scss';
 import { useNavigate } from 'react-router-dom';
 
-const Map = ({contextMap}) => {
+const Map = ({ contextMap }) => {
 
 
   const [mapData, setMapData] = useState(contextMap);
@@ -21,7 +21,9 @@ const Map = ({contextMap}) => {
     }
   }, [contextMap]);
 
-
+  const handleDetails = (feature) => {
+    navigate(`/location/${feature.id}`);
+  }
   useEffect(() => {
 
     if (Object.keys(contextMap).length > 0) {
@@ -32,13 +34,32 @@ const Map = ({contextMap}) => {
         zoom: mapData.zoom,
         bearing: mapData.bearing
       }, []);
-      mapData.locations.forEach((feature, index) => {
-        const navigateMark = () => navigate(`/location/${feature.id}`);
+      mapData.locations.forEach((location, index) => {
+
+        const markerPopup = new mapboxgl.Popup({offset: [0, -4]})
+        const button = document.createElement('button');
+        button.textContent = 'events ';
+        button.addEventListener('click', () => handleDetails(location));
+    
+        const h2 = document.createElement('h2');
+        h2.textContent = location.id;
+
+  
+        const popupContent = document.createElement('div');
+        popupContent.appendChild(h2);
+        popupContent.appendChild(button);
+
+        markerPopup.setDOMContent(popupContent);
+
+
+        console.log(mapData)
+
         const ref = React.createRef();
         ref.current = document.createElement('div');
-        createRoot(ref.current).render(<Marker index={index + 1} feature={feature} nav={navigateMark}></Marker>);
+        createRoot(ref.current).render(<Marker index={index + 1} feature={location} ></Marker>);
         new mapboxgl.Marker(ref.current)
-          .setLngLat([feature.longitude, feature.latitude])
+          .setLngLat([location.longitude, location.latitude])
+          .setPopup(markerPopup)
           .addTo(map);
       });
       map.addControl(new mapboxgl.NavigationControl(), 'top-right');
@@ -46,7 +67,13 @@ const Map = ({contextMap}) => {
     }
   }, [mapData]);
 
-  return <div className="map-container" ref={mapContainerRef} />;
+  return (
+  <>
+  <div className="map-container" ref={mapContainerRef} />;
+
+  </>  
+  )
+  
 };
 
 
