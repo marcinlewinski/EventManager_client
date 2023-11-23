@@ -51,12 +51,14 @@ img {
 
 .mapboxgl-popup-content button {
   cursor: pointer;
+
   &:hover {
     color: $secondary-color;
     box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6),
-    inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+      inset -2px -2px 3px rgba(0, 0, 0, 0.6);
   }
-  line-height: 2.5; 
+
+  line-height: 2.5;
   padding: 0 20px;
   font-size: 1rem;
   text-align: center;
@@ -90,6 +92,27 @@ img {
   font-size: 1vh;
   margin: 4px 2px;
   border-radius: 50%;
+
+  &:hover {
+    animation: pulse 1s infinite;
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+    }
+
+    50% {
+      transform: scale(1.1);
+      box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0);
+    }
+
+    100% {
+      transform: scale(1);
+      box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    }
+  }
 }
 
 .mapboxgl-ctrl-bottom-right {
