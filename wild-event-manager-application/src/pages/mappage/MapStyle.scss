@@ -50,10 +50,44 @@ section p {
   overflow: hidden;
   letter-spacing: 2px;
   transition: 2s;
+
 }
 
 section:target p {
   height: 10em;
   opacity: 1;
   padding: 20px;
+}
+
+section .active p {
+  height: 0;
+  opacity: 0;
+  padding: 0;
+  transition: 2s;
+}
+
+
+section:target .expanded-content {
+  height: 10em;
+  opacity: 1;
+  padding: 20px;
+}
+
+
+section:target .collapsed-content {
+  height: 0;
+  opacity: 0;
+  padding: 0;
+  transition: 2s;
+}
+.accordion__icon {
+  transition: transform 250ms ease-in-out;
+}
+
+.accordion__icon_expanded{
+  transition: transform 250ms ease-in-out;
+  transform: rotate(180deg);
+}
+.accordion_box{
+  display: flex;
 }
