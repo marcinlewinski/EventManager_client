@@ -70,7 +70,7 @@ section .active p {
 section:target .expanded-content {
   height: 10em;
   opacity: 1;
-  padding: 20px;
+  transition: 2s;
 }
 
 
@@ -91,3 +91,40 @@ section:target .collapsed-content {
 .accordion_box{
   display: flex;
 }
+
+
+.accordion_body {
+  background: var(--gray-2);
+  display: grid;
+  // place-items: center;
+  max-height: 50vh;
+  font-family: 'Google Sans', sans-serif, system-ui;
+}
+
+.track-wrapper {
+  height: 10%;
+  width: 100%;
+  max-block-size: var(--size-content-3);
+  overflow: hidden;
+}
+
+.track {
+  --size: clamp(200px, 40vmin, 50rem);
+  width:100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: overlay;
+  gap: var(--size-4);
+  list-style-type: none;
+  margin: 0;
+  padding: 20px var(--size-4); 
+}
+
+.track__item {
+  height: 100%;
+  aspect-ratio: 1;
+  background: hsl(0 80% 50% / 1);
+  scroll-snap-align: center;
+}
+
