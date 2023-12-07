@@ -6,7 +6,7 @@ const MapContext = createContext();
 export const useMap = () => {
     const context = useContext(MapContext);
     if (!context) {
-        throw new Error('useMap must be used within a RolesProvider');
+        throw new Error('useMap must be used within a MapProvider');
     }
     return context;
 };
@@ -20,7 +20,6 @@ export const MapProvider = ({ children }) => {
                 try {
                     const response = await getMap();
                     setMap(response);
-console.log(response)
                 } catch (error) {
                     console.error('Failed to fetch map:', error);
                 }
