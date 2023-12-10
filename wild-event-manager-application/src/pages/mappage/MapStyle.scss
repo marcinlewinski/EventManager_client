@@ -2,14 +2,17 @@
 .box {
   position: fixed;
   margin: 0;
-  bottom: 0;
+  bottom: 0;  
   padding: 0;
   left: 0;
   right: 0;
   box-sizing: border-box;
   text-align: center;
   display: flex;
+  // height: 10em;  naprawia błąd ale powoduje kolejny
+
 }
+
 
 .main {
   background-color: #27ae60;
@@ -28,7 +31,8 @@
 
 section a {
   margin-bottom: 0;
-  background: #fff;
+  bottom: 0; 
+  background: #f0f0f0;
   color: #000;
   text-decoration: none;
   text-align: center;
@@ -38,25 +42,33 @@ section a {
   letter-spacing: 3px;
   overflow: hidden;
   border-bottom: 3px solid #aaa69d;
+  box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6),
+  inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+
+  &:hover{ 
+    background-color: rgba(255, 255, 255, ); 
+  }
+ 
 }
 
-section p {
-  padding: 10px;
-  overflow: hidden;
-  height: 0;
-  opacity: 0;
-  background: #27ae60;
-  color: #fff;
-  overflow: hidden;
-  letter-spacing: 2px;
-  transition: 2s;
+// section p {
+//   padding: 10px;
+//   overflow: hidden;
+//   height: 0;
+//   opacity: 0;
+//   background: #27ae60;
+//   color: #fff;
+//   overflow: hidden;
+//   letter-spacing: 2px;
+//   transition: 2s;
 
-}
+// }
 
 section:target p {
   height: 10em;
   opacity: 1;
-  padding: 20px;
+  // padding: 20px;
+
 }
 
 section .active p {
@@ -68,9 +80,10 @@ section .active p {
 
 
 section:target .expanded-content {
-  height: 10em;
+  height: 18em;
   opacity: 1;
   transition: 2s;
+  padding: 0;
 }
 
 
@@ -119,6 +132,8 @@ section:target .collapsed-content {
   list-style-type: none;
   margin: 0;
   padding: 20px var(--size-4); 
+  margin-bottom: 100vh;
+
 }
 
 .track__item {

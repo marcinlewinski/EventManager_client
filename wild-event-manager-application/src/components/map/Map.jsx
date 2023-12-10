@@ -36,13 +36,13 @@ const Map = ({ contextMap }) => {
       }, []);
       mapData.locations.forEach((location, index) => {
 
-        const markerPopup = new mapboxgl.Popup({offset: [0, -4]})
+        const markerPopup = new mapboxgl.Popup({ offset: [0, -15] })
         const button = document.createElement('button');
         button.textContent = 'events ';
         button.addEventListener('click', () => handleDetails(location));
     
         const h2 = document.createElement('h2');
-        h2.textContent = location.id;
+        h2.textContent = location.title;
 
   
         const popupContent = document.createElement('div');
@@ -52,7 +52,7 @@ const Map = ({ contextMap }) => {
         markerPopup.setDOMContent(popupContent);
 
 
-        console.log(mapData)
+    
 
         const ref = React.createRef();
         ref.current = document.createElement('div');

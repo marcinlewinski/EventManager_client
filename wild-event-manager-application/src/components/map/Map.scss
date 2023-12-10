@@ -48,7 +48,21 @@ img {
 .mapboxgl-popup-content h2 {
   font-size: small;
 }
+.mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip{
+  align-self: center;
+  border-bottom: none;
+  border-top-color: #ddd ;
+}
+.mapboxgl-popup-anchor-left .mapboxgl-popup-tip{
+  align-self: center;
+  border-left: none;
+  border-right-color: #ddd;
+}
 
+
+.mapboxgl-popup-close-button{
+  display: none;
+}
 .mapboxgl-popup-content button {
   cursor: pointer;
 

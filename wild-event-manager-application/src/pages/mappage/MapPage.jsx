@@ -3,7 +3,7 @@ import Map from "../../components/map/Map";
 import EventsButton from "../../components/buttons/EventsButton";
 import { useMap } from "../../services/providers/MapProvider";
 import './MapStyle.scss';
-import AccordionWithSlider from "./AccordionWithSlider"; // Zakładam, że komponent ten znajduje się w tym samym folderze co MapPage.
+import AccordionWithSlider from "./AccordionWithSlider"; 
 
 const MapPage = () => {
   const { map: contextMap } = useMap();
