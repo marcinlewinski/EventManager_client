@@ -6,13 +6,16 @@ import EventPage from "./pages/eventpage/EventPage.jsx"
 import LocationPage from "./pages/locationpage/LocationPage.jsx"
 import { createBrowserRouter } from "react-router-dom"
 import { MapProvider } from "./services/providers/MapProvider.jsx"
+import { EventTodayProvider } from "./services/providers/EventTodayProvider.jsx"
 
 const router = createBrowserRouter([
 	{
 		path: "/",
 		element: (
 			<MapProvider value={{ map: [] }}>
-				<Layout />
+				<EventTodayProvider value={{ eventsToday: [] }}>
+					<Layout />
+				</EventTodayProvider>
 			</MapProvider>
 
 		),

@@ -1,22 +1,10 @@
-import React, { useState, useEffect } from "react"
-import { getTodayEvents } from "../../services/EventService"
+import React from "react"
 import EventCard from "./EventCard"
 import "./EventsList.scss"
+import { useEventToday } from "../../services/providers/EventTodayProvider"
 
 const EventsList = () => {
-	const [events, setEvents] = useState([])
-
-	useEffect(() => {
-		const getEvents = async () => {
-			try {
-				const data = await getTodayEvents()
-				setEvents(data)
-			} catch (error) {
-				setEvents([])
-			}
-		}
-		getEvents()
-	}, [])
+	const eventsToday = useEventToday();
 
 	return (
 		<div className='d-flex flex-column justify-content-center mx-5'>
@@ -25,7 +13,7 @@ const EventsList = () => {
 				className='carousel carousel-dark slide carousel-centered'
 				data-bs-ride='carousel'>
 				<div className='carousel-indicators'>
-					{events.map((_, index) => (
+					{eventsToday?.map((_, index) => (
 						<button
 							key={index}
 							type='button'
@@ -37,7 +25,7 @@ const EventsList = () => {
 					))}
 				</div>
 				<div className='carousel-inner'>
-					{events.map((event, index) => (
+					{eventsToday.map((event, index) => (
 						<EventCard key={index} event={event} isActive={index === 0} />
 					))}
 				</div>

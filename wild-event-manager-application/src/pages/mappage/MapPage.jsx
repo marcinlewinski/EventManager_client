@@ -1,24 +1,28 @@
-import React, { useEffect, useState } from "react";
-import Map from "../../components/map/Map"
+import React, { useState } from "react";
+import Map from "../../components/map/Map";
 import EventsButton from "../../components/buttons/EventsButton";
 import { useMap } from "../../services/providers/MapProvider";
-
-
+import './MapStyle.scss';
+import AccordionWithSlider from "./AccordionWithSlider"; 
 
 const MapPage = () => {
-	const { map: contextMap } = useMap();
+  const { map: contextMap } = useMap();
+  const [isDivExpanded, setIsDivExpanded] = useState(false);
 
-	return (
-		Object.keys(contextMap).length > 0 ?
-			<div>
-				<EventsButton />
-				<Map contextMap={contextMap} />
-			</div>
-			: null
+  const handleToggleDivSize = () => {
+    setIsDivExpanded(!isDivExpanded);
+  };
 
+  return (
+    Object.keys(contextMap).length > 0 ? (
+      <div>
+        <EventsButton />
+        <Map contextMap={contextMap} />
+        <AccordionWithSlider isDivExpanded={isDivExpanded} handleToggleDivSize={handleToggleDivSize} />
 
-
-	)
+      </div>
+    ) : null
+  );
 }
 
-export default MapPage
+export default MapPage;

@@ -6,7 +6,7 @@ const Marker = ({ children, feature, nav }) => {
   
 
     return (
-      <button className="marker" onClick={() => nav()}>
+      <button className="marker" >
         {children}
       </button>
     );

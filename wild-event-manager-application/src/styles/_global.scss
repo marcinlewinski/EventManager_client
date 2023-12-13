@@ -33,9 +33,9 @@ h2 {
 	font-size: 1.8rem;
 	color: $title-color;
 	text-align: center;
-	text-transform: uppercase;
+
 	font-weight: bold;
-	letter-spacing: 0.6rem;
+	// letter-spacing: 0.6rem;
 	@include breakpoint(tablet){
 		font-size: 2rem;
 	}
