@@ -13,12 +13,13 @@ const MapPage = () => {
     setIsDivExpanded(!isDivExpanded);
   };
 
+
   return (
     Object.keys(contextMap).length > 0 ? (
       <div>
         <EventsButton />
         <Map contextMap={contextMap} />
-        <AccordionWithSlider isDivExpanded={isDivExpanded} handleToggleDivSize={handleToggleDivSize} />
+        <AccordionWithSlider  isDivExpanded={isDivExpanded} handleToggleDivSize={handleToggleDivSize} />
 
       </div>
     ) : null

@@ -1,6 +1,8 @@
 import React from 'react';
 import { useEventToday } from '../../services/providers/EventTodayProvider';
 import { RemainingTime } from './RemainingTime';
+import { Link } from 'react-router-dom';
+import { useGlobalState } from '../../services/providers/GlobalGotoLocationProvider';
 
 const commonStyle = {
   backgroundColor: "#6938D3",
@@ -12,6 +14,8 @@ const commonStyle = {
 const Slider = () => {
   const eventsToday = useEventToday();
   // const closestEvent = findTheClosestEvent();
+  const { selectedLocation, setGlobalLocation } = useGlobalState();
+
 
   if (!eventsToday || eventsToday.length === 0) {
     return null;
@@ -39,7 +43,7 @@ const Slider = () => {
 
   return (
     <div className='accordion_body'>
-      <div className="track-wrapper">
+      <div className="track-wrapper" key={Math.random(Math.floor() / 100)}>
         <ul className="track">
           {eventsToday.map(event => (
             <li className="track__item" key={event.id}>
@@ -48,9 +52,11 @@ const Slider = () => {
                 <div>Event: {event.title}</div>
                 <div>Start at: {new Date(event.startsAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</div>
                 {/* {closestEvent && closestEvent.id === event.id && ( */}
-                  <RemainingTime eventId={event.id} key={event.id} eventTime={event.startsAt}></RemainingTime>
+                <RemainingTime eventId={event.id} key={event.id} eventTime={event.startsAt}></RemainingTime>
                 {/* )} */}
-                <button>Go to</button>
+                <button onClick={()=>{setGlobalLocation(event.location)}} >
+                  Go to
+                </button>
               </div>
             </li>
           ))}
