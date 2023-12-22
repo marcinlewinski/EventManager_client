@@ -8,7 +8,7 @@ const AccordionWithSlider = ({ isDivExpanded, handleToggleDivSize }) => {
           <section id="item1">
             <div>
               <div>
-                <a href="#item1">=</a>
+                <a href="#item1">-</a>
               </div>
               <div className={isDivExpanded ? 'expanded-content' : 'collapsed-content'}>
                 <Slider />

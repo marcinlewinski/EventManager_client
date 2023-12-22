@@ -2,7 +2,7 @@
 .box {
   position: fixed;
   margin: 0;
-  bottom: 0;  
+  bottom: 0;
   padding: 0;
   left: 0;
   right: 0;
@@ -16,11 +16,12 @@
 .center {
   width: 600px;
   margin: auto;
+
 }
 
 section a {
   margin-bottom: 0;
-  bottom: 0; 
+  bottom: 0;
   background: #f0f0f0;
   color: #000;
   text-decoration: none;
@@ -32,21 +33,24 @@ section a {
   overflow: hidden;
   border-bottom: 3px solid #aaa69d;
   box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6),
-  inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+    inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+  border-radius: 25px 25px 0px 0px;
 
-  &:hover{ 
-    background-color: rgba(255, 255, 255, ); 
+  &:hover {
+    background-color: rgba(255, 255, 255, );
   }
- 
+
 }
 
 
-section .active p {
+section .active {
   max-height: 0;
   opacity: 0;
   padding: 0;
   overflow: hidden;
   transition: max-height 1s ease-in-out, opacity 0.5s ease;
+
+
 }
 
 section:target .expanded-content {
@@ -64,6 +68,7 @@ section:target .collapsed-content {
 }
 
 .accordion_body {
+
   background: var(--gray-2);
   max-height: 50mm;
   font-family: 'Google Sans', sans-serif, system-ui;
@@ -76,7 +81,7 @@ section:target .collapsed-content {
   height: 10%;
   width: 100%;
   max-block-size: var(--size-content-3);
-  
+
 }
 
 .track {
@@ -94,6 +99,36 @@ section:target .collapsed-content {
 
 .track__item {
   height: 100%;
-  background: hsl(0 80% 50% / 1);
+  background: #f0f0f0;
+  ;
   scroll-snap-align: center;
+  padding: 5px;
+}
+
+.content {
+  background-image: linear-gradient(to top left,
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.2) 30%,
+      rgba(0, 0, 0, 0));
+  border: #f5f3f0;
+  color: #131313;
+  margin-bottom: "10px";
+  border-width: 5px;
+  border-style: solid;
+  border-radius: 25px;
+  padding: 5px;
+
+}
+
+.go-to-button {
+  background-image: linear-gradient(to top left,
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.2) 30%,
+      rgba(0, 0, 0, 0));
+  border-radius: 25px;
+  padding: 5px;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, );
+  }
 }

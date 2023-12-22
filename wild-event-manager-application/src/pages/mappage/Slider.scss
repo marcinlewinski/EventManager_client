@@ -19,6 +19,7 @@
   color: wheat;
   object-fit: cover;
   object-position: center; /* Dodane, aby utrzymać obrazy jako kwadraty */
+  border-radius: 25px; 
 
 }
 
@@ -38,6 +39,6 @@
 .track__item {
   height: 100%;
   aspect-ratio: 1;
-  background: hsl(0 80% 50% / 1);
+  background: #979797; 
   scroll-snap-align: center;
 }

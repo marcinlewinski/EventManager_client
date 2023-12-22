@@ -4,12 +4,7 @@ import { RemainingTime } from './RemainingTime';
 import { Link } from 'react-router-dom';
 import { useGlobalState } from '../../services/providers/GlobalGotoLocationProvider';
 
-const commonStyle = {
-  backgroundColor: "#6938D3",
-  color: 'wheat',
-  marginBottom: "10px",
-  border: '10px solid black',
-};
+
 
 const Slider = () => {
   const eventsToday = useEventToday();
@@ -47,14 +42,11 @@ const Slider = () => {
         <ul className="track">
           {eventsToday.map(event => (
             <li className="track__item" key={event.id}>
-              <div className='content' style={commonStyle}>
-                <div>Location: {event.location}</div>
+              <div className='content' >
                 <div>Event: {event.title}</div>
                 <div>Start at: {new Date(event.startsAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</div>
-                {/* {closestEvent && closestEvent.id === event.id && ( */}
                 <RemainingTime eventId={event.id} key={event.id} eventTime={event.startsAt}></RemainingTime>
-                {/* )} */}
-                <button onClick={()=>{setGlobalLocation(event.location)}} >
+                <button className='go-to-button' onClick={()=>{setGlobalLocation(event.location)}} >
                   Go to
                 </button>
               </div>
