@@ -3,6 +3,7 @@ import Event from "../../components/event/Event";
 import { useParams } from "react-router-dom";
 import { getEventById } from "../../services/EventService";
 import BackButton from "../../components/buttons/backButton/BackButton";
+import Loading from "../loadingpage/LoadingPage";
 
 const EventPage = () => {
 	const { id } = useParams()
@@ -22,7 +23,11 @@ const EventPage = () => {
 
 	return (
 		<div className="mx-5">
-			{event && <Event event={event} />}
+			{event === null ? (
+				<Loading></Loading>
+			) : (
+				<Event event={event} />
+			)}
 			<BackButton></BackButton>
 		</div>
 	)
