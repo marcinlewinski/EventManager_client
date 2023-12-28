@@ -1,37 +1,26 @@
-// @import url("https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@1,300&display=swap");
 .box {
   position: fixed;
   margin: 0;
-  bottom: 0;  
+  bottom: 0;
   padding: 0;
   left: 0;
   right: 0;
   box-sizing: border-box;
   text-align: center;
   display: flex;
-  // height: 10em;  naprawia błąd ale powoduje kolejny
 
-}
-
-
-.main {
-  background-color: #27ae60;
-  background-size: 100% 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: "Rowdies", cursive;
 }
 
 .center {
   width: 600px;
   margin: auto;
+
 }
 
 section a {
+  height: 6vh;
   margin-bottom: 0;
-  bottom: 0; 
+  bottom: 0;
   background: #f0f0f0;
   color: #000;
   text-decoration: none;
@@ -43,103 +32,101 @@ section a {
   overflow: hidden;
   border-bottom: 3px solid #aaa69d;
   box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6),
-  inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+    inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+  border-radius: 25px 25px 0px 0px;
 
-  &:hover{ 
-    background-color: rgba(255, 255, 255, ); 
+  &:hover {
+    background-color: rgba(255, 255, 255, );
   }
- 
-}
-
-// section p {
-//   padding: 10px;
-//   overflow: hidden;
-//   height: 0;
-//   opacity: 0;
-//   background: #27ae60;
-//   color: #fff;
-//   overflow: hidden;
-//   letter-spacing: 2px;
-//   transition: 2s;
-
-// }
-
-section:target p {
-  height: 10em;
-  opacity: 1;
-  // padding: 20px;
 
 }
 
-section .active p {
-  height: 0;
+section .active {
+  max-height: 0;
   opacity: 0;
   padding: 0;
-  transition: 2s;
-}
+  overflow: hidden;
+  transition: max-height 1s ease-in-out, opacity 0.5s ease;
 
+
+}
 
 section:target .expanded-content {
-  height: 18em;
   opacity: 1;
-  transition: 2s;
-  padding: 0;
+  max-height: 200px;
+  transition: max-height 1s ease-in-out, opacity 1.5s ease-in-out, padding 1.5s ease-in-out;
 }
-
 
 section:target .collapsed-content {
-  height: 0;
+  max-height: 0;
   opacity: 0;
   padding: 0;
-  transition: 2s;
+  overflow: hidden;
+  transition: max-height 1s ease-in-out, opacity 0.5s ease, padding 0.5s ease;
 }
-.accordion__icon {
-  transition: transform 250ms ease-in-out;
-}
-
-.accordion__icon_expanded{
-  transition: transform 250ms ease-in-out;
-  transform: rotate(180deg);
-}
-.accordion_box{
-  display: flex;
-}
-
 
 .accordion_body {
+
   background: var(--gray-2);
-  display: grid;
-  // place-items: center;
-  max-height: 50vh;
+  max-height: 50mm;
   font-family: 'Google Sans', sans-serif, system-ui;
+  overflow-y: auto;
+  position: sticky;
+
 }
 
 .track-wrapper {
   height: 10%;
   width: 100%;
   max-block-size: var(--size-content-3);
-  overflow: hidden;
+
 }
 
 .track {
   --size: clamp(200px, 40vmin, 50rem);
-  width:100%;
+  width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
-  overflow: overlay;
   gap: var(--size-4);
   list-style-type: none;
   margin: 0;
-  padding: 20px var(--size-4); 
-  margin-bottom: 100vh;
-
+  padding: 20px var(--size-4);
+  overflow-y: auto;
 }
 
 .track__item {
   height: 100%;
-  aspect-ratio: 1;
-  background: hsl(0 80% 50% / 1);
+  background: #f0f0f0;
+  ;
   scroll-snap-align: center;
+  padding: 5px;
 }
 
+.content {
+  background-image: linear-gradient(to top left,
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.2) 30%,
+      rgba(0, 0, 0, 0));
+  border: #f5f3f0;
+  color: #131313;
+  margin-bottom: "10px";
+  border-width: 5px;
+  border-style: solid;
+  border-radius: 25px;
+  padding: 5px;
+
+}
+
+.go-to-button {
+  background-image: linear-gradient(to top left,
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.2) 30%,
+      rgba(0, 0, 0, 0));
+  border-radius: 25px;
+  padding: 5px;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, );
+  }
+}

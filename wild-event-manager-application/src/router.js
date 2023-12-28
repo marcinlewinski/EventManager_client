@@ -7,6 +7,7 @@ import LocationPage from "./pages/locationpage/LocationPage.jsx"
 import { createBrowserRouter } from "react-router-dom"
 import { MapProvider } from "./services/providers/MapProvider.jsx"
 import { EventTodayProvider } from "./services/providers/EventTodayProvider.jsx"
+import { GlobalStateProvider } from "./services/providers/GlobalGotoLocationProvider.jsx"
 
 const router = createBrowserRouter([
 	{
@@ -14,7 +15,9 @@ const router = createBrowserRouter([
 		element: (
 			<MapProvider value={{ map: [] }}>
 				<EventTodayProvider value={{ eventsToday: [] }}>
-					<Layout />
+					<GlobalStateProvider>
+						<Layout />
+					</GlobalStateProvider>
 				</EventTodayProvider>
 			</MapProvider>
 
@@ -25,6 +28,7 @@ const router = createBrowserRouter([
 				path: "/",
 				element: (
 					<MapPage />
+
 				),
 				errorElement: <ErrorPage />,
 			},
