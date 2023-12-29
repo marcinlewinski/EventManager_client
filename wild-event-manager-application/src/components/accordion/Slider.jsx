@@ -11,7 +11,7 @@ const Slider = () => {
 
   return (
     <div className='accordion_body'>
-      <div className="track-wrapper">
+      <div className="track-wrapper" >
         <ul className="track">
           {eventsToday.length === 0 ? (
             <li className="track__item">
@@ -25,8 +25,8 @@ const Slider = () => {
           ) : (
             null
           )}
-          {eventsToday.map(event => (
-            <li className="track__item" key={event.id}>
+          {eventsToday.map((event,index) => (
+            <li className="track__item" key={index}>
               <div className='content' >
                 <div>Event: {event.title}</div>
                 <div>Start at: {new Date(event.startsAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</div>
