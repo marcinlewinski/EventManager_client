@@ -9,6 +9,7 @@ import { MapProvider } from "./services/providers/MapProvider.jsx"
 import { EventTodayProvider } from "./services/providers/EventTodayProvider.jsx"
 import { GlobalStateProvider } from "./services/providers/GlobalGotoLocationProvider.jsx"
 import { EventCacheProvider } from "./services/providers/EventCacheProvider.jsx"
+import { LocationCacheProvider } from "./services/providers/LocationCacheProvider.jsx"
 
 const router = createBrowserRouter([
 	{
@@ -17,8 +18,10 @@ const router = createBrowserRouter([
 			<MapProvider value={{ map: [] }}>
 				<EventTodayProvider value={{ eventsToday: [] }}>
 					<GlobalStateProvider>
-					<EventCacheProvider>
-						<Layout />
+						<EventCacheProvider>
+							<LocationCacheProvider>
+								<Layout />
+							</LocationCacheProvider>
 						</EventCacheProvider>
 					</GlobalStateProvider>
 				</EventTodayProvider>
@@ -43,9 +46,9 @@ const router = createBrowserRouter([
 			{
 				path: "/event/:id",
 				element: (
-				
-						<EventPage />
-				
+
+					<EventPage />
+
 
 				),
 				errorElement: <ErrorPage />,
