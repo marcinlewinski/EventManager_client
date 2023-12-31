@@ -15,7 +15,7 @@ const EventPage = () => {
 		const fetchData = async () => {
 			try {
 				const event = await fetchEventById(id);
-				setEvent( event);
+				setEvent(event);
 			} catch (error) {
 				console.error("Error fetching event:", error);
 			}

@@ -1,3 +1,6 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
 .box {
   position: fixed;
   margin: 0;
@@ -120,13 +123,15 @@ section:target .collapsed-content {
 
 .go-to-button {
   background-image: linear-gradient(to top left,
-      rgba(0, 0, 0, 0.2),
-      rgba(0, 0, 0, 0.2) 30%,
-      rgba(0, 0, 0, 0));
+      rgba(49, 200, 155, 0.2),
+      rgba(49, 200, 155, 1) 30%,
+      rgba(49, 200, 155, 0)); 
   border-radius: 25px;
   padding: 5px;
 
   &:hover {
-    background-color: rgba(255, 255, 255, );
+    background-color: rgb(255, 255, 255);
+    opacity: 0.8;
+    // color: $secondary-color;
   }
 }
