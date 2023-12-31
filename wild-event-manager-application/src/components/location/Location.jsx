@@ -3,12 +3,12 @@ import EventTitle from "../event/EventTitle"
 import "./Location.scss"
 
 const Location = ({ location }) => {
-	console.log(location)
+
 	return (
 		<>
 			<div className='location-text'>
 				<h3 className='title-location'>{location.title}</h3>
-				<p className='description-locationt text-center ms-5 me-5'>{location.description}</p>
+				<p className='description-locationt text-center ms-5 me-5' >{location.description}</p>
 			</div>
 			<div className='d-flex flex-column justify-content-center mx-5 da'>
 				<div

@@ -26,8 +26,9 @@ export const EventTodayProvider = ({ children }) => {
                 }
             }
             fetchEventsToday();
-       
+ 
     }, [])
+      
     return (
         <EventTodayContext.Provider value={eventsToday}>
             {children}

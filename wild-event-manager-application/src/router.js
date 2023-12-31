@@ -8,6 +8,8 @@ import { createBrowserRouter } from "react-router-dom"
 import { MapProvider } from "./services/providers/MapProvider.jsx"
 import { EventTodayProvider } from "./services/providers/EventTodayProvider.jsx"
 import { GlobalStateProvider } from "./services/providers/GlobalGotoLocationProvider.jsx"
+import { EventCacheProvider } from "./services/providers/EventCacheProvider.jsx"
+import { LocationCacheProvider } from "./services/providers/LocationCacheProvider.jsx"
 
 const router = createBrowserRouter([
 	{
@@ -16,7 +18,11 @@ const router = createBrowserRouter([
 			<MapProvider value={{ map: [] }}>
 				<EventTodayProvider value={{ eventsToday: [] }}>
 					<GlobalStateProvider>
-						<Layout />
+						<EventCacheProvider>
+							<LocationCacheProvider>
+								<Layout />
+							</LocationCacheProvider>
+						</EventCacheProvider>
 					</GlobalStateProvider>
 				</EventTodayProvider>
 			</MapProvider>
@@ -39,7 +45,12 @@ const router = createBrowserRouter([
 			},
 			{
 				path: "/event/:id",
-				element: <EventPage />,
+				element: (
+
+					<EventPage />
+
+
+				),
 				errorElement: <ErrorPage />,
 			},
 			{

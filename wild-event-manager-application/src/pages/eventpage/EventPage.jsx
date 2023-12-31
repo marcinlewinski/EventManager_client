@@ -4,22 +4,25 @@ import { useParams } from "react-router-dom";
 import { getEventById } from "../../services/EventService";
 import BackButton from "../../components/buttons/backButton/BackButton";
 import Loading from "../loadingpage/LoadingPage";
+import { useEventCache } from "../../services/providers/EventCacheProvider";
 
 const EventPage = () => {
 	const { id } = useParams()
 	const [event, setEvent] = useState(null)
+	const { fetchEventById } = useEventCache();
 
 	useEffect(() => {
-		const getEvent = async () => {
+		const fetchData = async () => {
 			try {
-				const data = await getEventById(id)
-				setEvent(data)
+				const event = await fetchEventById(id);
+				setEvent(event);
 			} catch (error) {
-				console.error("Failed to get event")
+				console.error("Error fetching event:", error);
 			}
-		}
-		getEvent()
-	}, [id])
+		};
+
+		fetchData();
+	}, [id]);
 
 	return (
 		<div className="mx-5">
