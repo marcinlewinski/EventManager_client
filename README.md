@@ -1,25 +1,22 @@
 # WILD EVENT MANAGER - CLIENTS APP FRONTEND
 
- Our project is already deployed, you can see it here: 
- 
 
- 1. [Backoffice](http://wildeventmanager.com/)
- 2. [Clients app](http://wildevent.com.pl/) - designed for mobile devices
 
 Here you can find other repositories for this project: 
 
- 1. [Backend](https://github.com/michalz18/wild-event-manager-backend)
- 2. [Backoffice](https://github.com/michalz18/wild-event-manager-backend)
+ 1. [Backend](https://github.com/marcinlewinski/EventManager_backend)
+ 2. [Backoffice](https://github.com/marcinlewinski/WildEvent-manager)
 
 ## 🌟 Project aim
 
   
 
-A dynamic event management solution crafted to provide an immersive experience for both event attendees and organizers. Designed to adapt to a wide range of venues, this tool integrates cutting-edge map interactivity, real-time event details, and an intuitive dashboard for organizers. This project is our original idea.
-
+The Wild Event Manager project constitutes an integral part of a larger system aimed at comprehensive event management and organizational functioning. It focuses on the presentation and access to information about events organized within a specific location, in this case, a zoo. Accompanying the project is a complementary backoffice accessible at [Backoffice](https://github.com/marcinlewinski/WildEvent-manager).
   
 
 ## 📖 Table of contents
+
+- [Demo](#-demo)
 
 - [Team](#-team)
 
@@ -32,6 +29,20 @@ A dynamic event management solution crafted to provide an immersive experience f
 - [Technologies](#%EF%B8%8F-technologies--tools)
 
 - [License](#-license)
+
+
+## 🖼️ Demo 
+
+| Main view |
+|:-------------------------:|
+| ![Main view](./wild-event-manager-application/.github/images/main.png) |
+
+| Context | Start event counting time |
+|:-------------------------:|:-------------------------:|
+| ![Context](./wild-event-manager-application/.github/images/context.gif) | ![Registration screen](./wild-event-manager-application/.github/images/time.gif) |
+
+
+
 
 ## 👥 Team
 
@@ -61,8 +72,6 @@ Mentors: Michał Kruczkowski
 
 - Implement CI/CD
 
-- Data cache
-
   
 
 ## ✨ Features
@@ -78,8 +87,6 @@ Mentors: Michał Kruczkowski
 - Relational DB
 
 - Authentication and authorization users by JWT
-
-- Application deployment
 
 - Both applications are responsive, but the client part of the project is mainly intended for users using phones
 
