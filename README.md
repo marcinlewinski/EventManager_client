@@ -4,8 +4,8 @@
 
 Here you can find other repositories for this project: 
 
- 1. [Backend](https://github.com/marcinlewinski/EventManager_backend)
- 2. [Backoffice](https://github.com/marcinlewinski/WildEvent-manager)
+ 1. [SERVER](https://github.com/marcinlewinski/EventManager_backend)
+ 2. [BACKOFFICE](https://github.com/marcinlewinski/EventManager_Backoffice)
 
 ## 🌟 Project aim
 
